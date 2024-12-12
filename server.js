@@ -4,6 +4,7 @@ import indexRoutes from './routes/index';
 const app = express();
 const PORT = process.env.SERVER_PORT || 5000;
 
+app.use(express.json())
 app.use('/', indexRoutes);
 
 app.listen(PORT, () => {
