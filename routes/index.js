@@ -14,5 +14,7 @@ router.get('/connect', basicAuthenticate, async (req, res) => AuthController.get
 router.get('/disconnect', xTokenAuthenticate, async (req, res) => AuthController.getDisconnect(req, res));
 router.get('/users/me', xTokenAuthenticate, async (req, res) => UsersController.getMe(req, res));
 router.post('/files', xTokenAuthenticate, async (req, res) => FilesController.postUpload(req, res));
+router.get('/files/:id', xTokenAuthenticate, async (req, res) => FilesController.getShow(req, res));
+router.get('/files', xTokenAuthenticate, async (req, res) => FilesController.getIndex(req, res));
 
 export default router;
