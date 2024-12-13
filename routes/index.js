@@ -18,5 +18,6 @@ router.get('/files/:id', xTokenAuthenticate, async (req, res) => FilesController
 router.get('/files', xTokenAuthenticate, async (req, res) => FilesController.getIndex(req, res));
 router.put('/files/:id/publish', xTokenAuthenticate, async (req, res) => FilesController.putPublish(req, res));
 router.put('/files/:id/unpublish', xTokenAuthenticate, async (req, res) => FilesController.putUnpublish(req, res));
+router.get('/files/:id/data', async (req, res) => FilesController.getFile(req, res));
 
 export default router;
